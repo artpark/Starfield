@@ -1,10 +1,26 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class Starfield extends PApplet {
+
 //Art Parkeenvincha, Block 3, Starfield
 Particle[] ball = new Particle[600];
 int myWidth = 500;
 int myHeight = 500;
 
 //your code here
-void setup()
+public void setup()
 {
   size(myWidth, myHeight);
   for(int i = 0; i < ball.length-1; i++)
@@ -15,7 +31,7 @@ void setup()
   colorMode(HSB);
   noStroke();
 }
-void draw()
+public void draw()
 {
   fill(0, 0, 80, 100);
   rect(0, 0, myWidth, myHeight);
@@ -26,7 +42,7 @@ void draw()
   }
 }
 
-void keyPressed()
+public void keyPressed()
 {
   for(int i = 0; i < ball.length-1; i++)
   {
@@ -131,3 +147,12 @@ Submit the url of your GitHub webpage via the school loop drop box for the assig
 Extensions
 Have a fun and be creative. If you have extra time you may want to modify your program and add extra features. Experiment with different arrangements of particles. Look at student work from previous years for other variations.
 */
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "Starfield" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
